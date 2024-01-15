@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45783c76-5d50-42c6-8bcb-1d25cd7c7e48">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="bulan" class="java.lang.String"/>
+	<parameter name="tahun" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM rekap_absen LEFT JOIN karyawan ON rekap_absen.kode_karyawan = karyawan.kode_karyawan LEFT JOIN jadwal ON karyawan.id_jadwal = jadwal.id_jadwal ORDER BY tanggal_absen DESC;]]>
+	</queryString>
+	<field name="tanggal_absen" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam_masuk" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam_keluar" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_karyawan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="shift" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="118" y="0" width="313" height="31" uuid="7cb3ef1c-e8b6-4aef-922c-7d756f5d979a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOKO AKMAL JAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="31" width="313" height="20" uuid="fe5dc926-52d8-46e5-8eb3-b7278a581657"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jl.Kelengkeng 1 Blok E7 no 6, Pamulang Timur, Pamulang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="51" width="313" height="20" uuid="61858fd4-3d4d-4c76-9899-9bd15cbf386a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Telp : (021) 7483929, Email : tokoakmaljaya@gmail.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="148" y="10" width="315" height="25" uuid="6c8a4468-0e66-40cb-a70b-161e327b3cd1"/>
+				<textElement>
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN ABSENSI KARYAWAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="33" width="63" height="20" uuid="0a58c1cb-479a-4cc4-a4ca-bb6d257570c4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BULAN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="13" width="63" height="20" uuid="298ef5aa-c221-407b-9f83-1d30ba42af15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAHUN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="100" height="20" uuid="9c2642e6-9c21-4b56-9ab3-45fade5c3979"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Karyawan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="66" width="113" height="20" uuid="42a9c179-3c27-4011-b418-0c2a0ec03a59"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal Absen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="66" width="92" height="20" uuid="862988ff-45c3-438a-a52c-b136a97191ab"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jam Masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="66" width="92" height="20" uuid="1add18dd-0faf-4c0c-bf25-43a7e63cd20d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jam Keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="66" width="66" height="20" uuid="53b5cd7a-18a9-41e6-b503-1b5c4a7160b3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Shift]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="66" width="92" height="20" uuid="b14f7efd-a7d9-4144-b2f7-1e886e7aa37a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="13" width="100" height="20" uuid="9e0445f1-0324-4397-9caf-03333de2f020"/>
+				<textFieldExpression><![CDATA[$P{tahun}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="33" width="100" height="20" uuid="100cd90c-cfff-429b-9e68-27f458807954"/>
+				<textFieldExpression><![CDATA[$P{bulan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="100" y="0" width="113" height="20" uuid="ee653d61-2a46-497f-ad35-d4812bdc890a"/>
+				<textFieldExpression><![CDATA[$F{tanggal_absen}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="213" y="0" width="92" height="20" uuid="2f161313-443a-44c3-a617-9f0359fae8e9"/>
+				<textFieldExpression><![CDATA[$F{jam_masuk}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm.ss">
+				<reportElement x="305" y="0" width="92" height="20" uuid="42d8f7e1-347c-4fb4-8be1-62bcbb2a4a51"/>
+				<textFieldExpression><![CDATA[$F{jam_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="92" height="20" uuid="a7d86587-13d1-4753-bb95-7526e2cd888f"/>
+				<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b55f1e8c-f01d-45bf-a0c5-faa7281c3e2e"/>
+				<textFieldExpression><![CDATA[$F{nama_karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="66" height="20" uuid="d0f3ffb0-1985-4ddd-a6a5-282f7196143a"/>
+				<textFieldExpression><![CDATA[$F{shift}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
